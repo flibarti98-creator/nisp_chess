@@ -5,12 +5,13 @@ class Bishop {
     }
 
     validateMove(move) {
-        
-        
-         const dx = Math.abs(move.toX - move.fromX);
-        const dy = Math.abs(move.toY - move.fromY);
+        const dx = Math.abs(move.destinationX - move.sourceX);
+        const dy = Math.abs(move.destinationY - move.sourceY);
 
-        // Goniec porusza się po przekątnej
-        return dx === dy;
+        // Goniec porusza się tylko po przekątnej - różnica X i Y musi być równa
+        if (dx === dy && dx > 0) {
+            return true;
+        }
+        return false;
     }
 }
