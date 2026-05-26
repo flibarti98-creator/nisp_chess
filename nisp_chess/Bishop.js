@@ -6,7 +6,11 @@ class Bishop {
 
     validateMove(move) {
         
-        // dokoncz implementacje
-        return false;
+        
+         const dx = Math.abs(move.toX - move.fromX);
+        const dy = Math.abs(move.toY - move.fromY);
+
+        // Goniec porusza się po przekątnej
+        return dx === dy;
     }
 }
